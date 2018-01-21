@@ -4,16 +4,21 @@ from flask import request
 
 app = Flask(__name__)
 
+
 @app.route('/', methods=['GET'])
+def init():
+    error = None
+    return render_template('login.html', error=error)
+
+
 @app.route('/login', methods=['POST'])
 def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] == 'admin':
-            return redirect(url_for('home', username=request.form['username']))
-        else:
-            error = 'invalid username/password'
-    return render_template('login.html', error=error)
+    if request.form['username'] == 'admin':
+        target_url = redirect(url_for('home', username=request.form['username']))
+    else:
+        error = 'invalid username/password'
+        target_url = render_template('login.html', error=error)
+    return target_url
 
 
 @app.route('/home', methods=['POST', 'GET'])
@@ -23,4 +28,4 @@ def home():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run('127.0.0.1', 5000, True)
