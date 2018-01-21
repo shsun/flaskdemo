@@ -1,10 +1,14 @@
+import os
+
 from flask import Flask
 from flask import render_template, redirect, url_for
 from flask import request
 
+from app import create_app
+
 app = Flask(__name__)
 
-
+'''
 @app.route('/', methods=['GET'])
 def init():
     error = None
@@ -24,6 +28,11 @@ def login():
 @app.route('/home', methods=['POST', 'GET'])
 def home():
     return render_template('home.html', username=request.args.get('username'))
+'''
+
+config_name = os.getenv('FLASK_CONFIG')
+config_name = 'testing'
+app = create_app(config_name)
 
 
 if __name__ == '__main__':
