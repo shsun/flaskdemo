@@ -63,7 +63,7 @@ def add_note():
             db.session.add(note)
             db.session.commit()
             flash('You have successfully added a new note to the user.')
-        except BaseException,e:
+        except BaseException, e:
             # in case role name already exists
             db.session.rollback()
             flash('Error: .')
@@ -76,6 +76,31 @@ def add_note():
         response = render_template('user/note.html', add_role=add_note,
                                    form=form, title='Add Note')
     return response
+
+
+'''
+# method_a starts a transaction and calls method_b
+def method_a(connection):
+    trans = connection.begin() # open a transaction
+    try:
+        method_b(connection)
+        trans.commit()  # transaction is committed here
+    except:
+        trans.rollback() # this rolls back the transaction unconditionally
+        raise
+
+
+# method_b also starts a transaction
+def method_b(connection):
+    trans = connection.begin()  # open a transaction - this runs in the context of method_a's transaction
+    try:
+        connection.execute("insert into mytable values ('bat', 'lala')")
+        connection.execute(mytable.insert(), col1='bat', col2='lala')
+        trans.commit()  # transaction is not committed yet
+    except:
+        trans.rollback()  # this rolls back the transaction unconditionally
+        raise
+'''
 
 
 @user.route('/notes/edit/<int:id>', methods=['GET', 'POST'])
