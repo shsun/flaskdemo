@@ -52,25 +52,30 @@ def add_note():
     add_note = True
     user = current_user
     form = NoteForm()
-    if form.validate_on_submit():
+
+    bol = form.validate_on_submit()
+    if bol:
         note = Note(title=form.title.data,
                     body=form.body.data)
-
         try:
             # add role to the database
             user.notes.append(note)
             db.session.add(note)
             db.session.commit()
             flash('You have successfully added a new note to the user.')
-        except:
+        except BaseException,e:
             # in case role name already exists
+            db.session.rollback()
             flash('Error: .')
+        finally:
+            db.session.close()
         # redirect to the roles page
-        return redirect(url_for('user.list_notes'))
-
-    # load role template
-    return render_template('user/note.html', add_role=add_note,
-                           form=form, title='Add Note')
+        response = redirect(url_for('user.list_notes'))
+    else:
+        # load role template
+        response = render_template('user/note.html', add_role=add_note,
+                                   form=form, title='Add Note')
+    return response
 
 
 @user.route('/notes/edit/<int:id>', methods=['GET', 'POST'])

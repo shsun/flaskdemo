@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 DROP TABLE IF EXISTS `careers`;
 CREATE TABLE IF NOT EXISTS `careers` (
-  `id` bigint(50) NOT NULL COMMENT 'id',
+  `id` bigint(50) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `name` varchar(60) NOT NULL COMMENT 'name',
   `description` varchar(200) DEFAULT NULL COMMENT 'username',
   `users` varchar(60) DEFAULT NULL COMMENT 'users',
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `careers` (
 
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
-  `id` bigint(50) NOT NULL COMMENT 'id',
+  `id` bigint(50) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `name` varchar(60) NOT NULL COMMENT 'name',
   `description` varchar(200) DEFAULT NULL COMMENT 'username',
   `users` varchar(60) DEFAULT NULL COMMENT 'users',
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
 
 DROP TABLE IF EXISTS `notes`;
 CREATE TABLE IF NOT EXISTS `notes` (
-  `id` bigint(50) NOT NULL COMMENT 'id',
+  `id` bigint(50) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `title` varchar(80) NOT NULL COMMENT 'name',
   `user_id` bigint(50) DEFAULT NULL COMMENT 'user_id',
   `body` longtext DEFAULT NULL COMMENT 'users',

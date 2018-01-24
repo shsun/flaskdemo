@@ -1,6 +1,6 @@
 # app/__init__.py
 
-# third-party imports
+# 3rd-party imports
 from flask import Flask, render_template, abort
 
 from flask_login import LoginManager
@@ -11,12 +11,7 @@ from flask_bootstrap import Bootstrap
 # local imports
 from config import app_config
 
-
 # db variable initialization
-#basedir = os.path.abspath(os.path.dirname(__file__))
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql:///' + os.path.join(basedir, 'data.sqlite')
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@127.0.0.1/database'
-#app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 db = SQLAlchemy()
 
 # Flask database migration management
@@ -78,7 +73,7 @@ def create_app(config_name):
         abort(500)
 
     def logError(start):
-        #   Explicitely Prints error to the errorlog. @/var/log/apache2/error.log
+        # explicitely Prints error to the errorlog. @/var/log/apache2/error.log
         assert start
         import traceback, sys, StringIO
         err = sys.stderr
@@ -86,6 +81,5 @@ def create_app(config_name):
         traceback.print_exc()
         sys.stderr = err
         print buffer.getvalue()
-
 
     return app
