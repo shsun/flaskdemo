@@ -6,9 +6,10 @@ from flask import request
 
 from app import create_app
 
-app = Flask(__name__)
 
 '''
+app = Flask(__name__)
+
 @app.route('/', methods=['GET'])
 def init():
     error = None
@@ -31,10 +32,11 @@ def home():
 '''
 
 config_name = os.getenv('FLASK_CONFIG')
-config_name = 'testing'
+config_name = 'development'
 app = create_app(config_name)
 
 
 if __name__ == '__main__':
     app.debug = True
-    app.run('127.0.0.1', 5000, True)
+    app.run('127.0.0.1', 5000, None)
+

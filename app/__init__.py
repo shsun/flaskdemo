@@ -11,8 +11,14 @@ from flask_bootstrap import Bootstrap
 # local imports
 from config import app_config
 
+
 # db variable initialization
+#basedir = os.path.abspath(os.path.dirname(__file__))
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql:///' + os.path.join(basedir, 'data.sqlite')
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@127.0.0.1/database'
+#app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 db = SQLAlchemy()
+
 # Flask database migration management
 
 # Flask Login Manager initialization
