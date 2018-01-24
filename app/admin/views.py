@@ -6,12 +6,14 @@ from forms import CareerForm, RoleForm, UserAssignForm
 from .. import db
 from ..models import Career, Role, User
 
+
 def check_admin():
     """
     Prevent non-admins from accessing the page
     """
     if not current_user.is_admin:
         abort(403)
+
 
 # Career Views
 
@@ -26,6 +28,7 @@ def list_careers():
     careers = Career.query.all()
     return render_template('admin/careers/careers.html',
                            careers=careers, title="Career Fields")
+
 
 @admin.route('/careers/add', methods=['GET', 'POST'])
 @login_required
@@ -48,7 +51,11 @@ def add_career():
             flash('You have successfully added a career field to the database.')
         except:
             # in case career field already exists
+            db.session.rollback()
             flash('Error: career field already exists.')
+        finally:
+            if not db.session:
+                db.session.close()
 
         # redirect to career field page
         return redirect(url_for('admin.list_careers'))
@@ -57,6 +64,7 @@ def add_career():
     return render_template('admin/careers/career.html', action="Add",
                            add_career=add_career, form=form,
                            title="Add a Career Field")
+
 
 @admin.route('/careers/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
@@ -85,6 +93,7 @@ def edit_career(id):
                            add_careert=add_career, form=form,
                            career=career, title="Edit Career Field")
 
+
 @admin.route('/careers/delete/<int:id>', methods=['GET', 'POST'])
 @login_required
 def delete_career(id):
@@ -103,6 +112,7 @@ def delete_career(id):
 
     return render_template(title="Delete A Career Field")
 
+
 # Role Views
 
 @admin.route('/roles')
@@ -115,6 +125,7 @@ def list_roles():
     roles = Role.query.all()
     return render_template('admin/roles/roles.html',
                            roles=roles, title='Roles')
+
 
 @admin.route('/roles/add', methods=['GET', 'POST'])
 @login_required
@@ -147,6 +158,7 @@ def add_role():
     return render_template('admin/roles/role.html', add_role=add_role,
                            form=form, title='Add Role')
 
+
 @admin.route('/roles/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_role(id):
@@ -173,6 +185,7 @@ def edit_role(id):
     form.name.data = role.name
     return render_template('admin/roles/role.html', add_role=add_role,
                            form=form, title="Edit Role")
+
 
 @admin.route('/roles/delete/<int:id>', methods=['GET', 'POST'])
 @login_required
@@ -206,6 +219,7 @@ def list_users():
     users = User.query.all()
     return render_template('admin/users/users.html',
                            users=users, title='Users')
+
 
 @admin.route('/users/assign/<int:id>', methods=['GET', 'POST'])
 @login_required

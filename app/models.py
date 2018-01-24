@@ -1,10 +1,10 @@
-
-#http://docs.sqlalchemy.org/en/latest/core/type_basics.html#generic-types
+# http://docs.sqlalchemy.org/en/latest/core/type_basics.html#generic-types
 
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import db, login_manager
+
 
 class User(UserMixin, db.Model):
     """
@@ -29,6 +29,7 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<Career Field: {}>'.format(self.name)
+
     @property
     def password(self):
         """
@@ -52,30 +53,31 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return '<Name: {}>'.format(self.username)
 
-
     def serialize(self):
         """Return object data in easily serializeable format"""
         return {
-            'User ID' : self.id,
-            'Email':  self.email,
+            'User ID': self.id,
+            'Email': self.email,
             'Username': self.username,
             'First Name': self.first_name,
-            'Last Name' : self.last_name,
+            'Last Name': self.last_name,
             'CareerField': self.career.name,
             'Role': self.role.name
-            }
+        }
+
 
 def dump_datetime(value):
-        """Deserialize datetime object into string form for JSON processing."""
-        if value is None:
-            return None
-        return [value.strftime("%Y-%m-%d"), value.strftime("%H:%M:%S")]
+    """Deserialize datetime object into string form for JSON processing."""
+    if value is None:
+        return None
+    return [value.strftime("%Y-%m-%d"), value.strftime("%H:%M:%S")]
 
 
 # Set up user_loader
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 class Career(db.Model):
     """
@@ -95,12 +97,13 @@ class Career(db.Model):
     def serialize(self):
         """Return object data in easily serializeable format"""
         return {
-            'Career ID' : self.id,
-            'name':  self.name,
+            'Career ID': self.id,
+            'name': self.name,
             'Description': self.description,
             'Roles Included': [u.role.name for u in self.users],
-            'Users' : [u.username for u in self.users]
-            }
+            'Users': [u.username for u in self.users]
+        }
+
 
 class Role(db.Model):
     """
@@ -120,14 +123,14 @@ class Role(db.Model):
     def serialize(self):
         """Return object data in easily serializeable format"""
         return {
-            'Role ID' : self.id,
-            'name':  self.name,
+            'Role ID': self.id,
+            'name': self.name,
             'Description': self.description,
-            'Users' : [u.username for u in self.users]
-            }
+            'Users': [u.username for u in self.users]
+        }
+
 
 class Note(db.Model):
-
     __tablename__ = 'notes'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -145,8 +148,8 @@ class Note(db.Model):
     def serialize(self):
         """Return object data in easily serializeable format"""
         return {
-            'Note ID' : self.id,
-            'Title':  self.title,
+            'Note ID': self.id,
+            'Title': self.title,
             'Description': self.body,
-            'User' : self.user.username
-            }
+            'User': self.user.username
+        }

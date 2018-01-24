@@ -15,10 +15,9 @@ def viewprofile():
     Add an notetaker to the database through the registration form
     """
     user = current_user
-    form=UserUpdateForm(obj=user)
+    form = UserUpdateForm(obj=user)
     form.populate_obj(user)
     if form.validate_on_submit():
-
         form.populate_obj(user)
 
         db.session.commit()
@@ -31,7 +30,6 @@ def viewprofile():
 @user.route('/notes')
 @login_required
 def list_notes():
-
     """
     List all roles
     """
@@ -43,6 +41,7 @@ def list_notes():
 
     return render_template('user/notes.html', user=user,
                            notes=notes, title='Notes')
+
 
 @user.route('/notes/add', methods=['GET', 'POST'])
 @login_required
@@ -82,7 +81,6 @@ def edit_note(id):
     """
 
     add_note = False
-
     note = Note.query.get_or_404(id)
     form = NoteForm(obj=note)
     if form.validate_on_submit():
@@ -99,6 +97,7 @@ def edit_note(id):
     form.title.data = note.title
     return render_template('user/note.html', add_role=add_note,
                            form=form, title="Edit Note")
+
 
 @user.route('/notes/delete/<int:id>', methods=['GET', 'POST'])
 @login_required
