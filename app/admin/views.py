@@ -6,6 +6,8 @@ from forms import CareerForm, RoleForm, UserAssignForm
 from .. import db
 from ..models import Career, Role, User
 
+from flask import request,make_response
+
 
 def check_admin():
     """
@@ -24,6 +26,8 @@ def list_careers():
     List all career fields
     """
     check_admin()
+
+    p = Career.query.paginate(page=1, per_page=10, error_out=True)
 
     careers = Career.query.all()
     return render_template('admin/careers/careers.html',
