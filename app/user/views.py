@@ -78,9 +78,8 @@ def add_note():
     return response
 
 
-
 @user.route('/notes/trans', methods=['GET', 'POST'])
-def method_a( ):
+def method_a():
     '''
     transaction demo
     :return:
@@ -91,7 +90,7 @@ def method_a( ):
         connection.execute("insert into notes(title,user_id,body) values ('bat_004', 1, 'lala')")
         method_b(connection)
         trans.commit()
-    except:
+    except BaseException, e:
         trans.rollback()
         raise
     return 'ok'
@@ -103,11 +102,9 @@ def method_b(connection):
         connection.execute("insert into notes(title,user_id,body) values ('bat_104', 1, 'lala')")
         connection.execute("insert into notes(title,user_id,body) values ('bat_204', 1, 'lala')")
         trans.commit()
-    except:
+    except BaseException, e:
         trans.rollback()
         raise
-
-
 
 
 @user.route('/notes/edit/<int:id>', methods=['GET', 'POST'])

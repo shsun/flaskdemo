@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78460e4e-4b16-4fcd-bb78-90cadda44b22" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" afterPath="$PROJECT_DIR$/app/templates/base.html" />
       <change beforePath="$PROJECT_DIR$/app/user/views.py" afterPath="$PROJECT_DIR$/app/user/views.py" />
-      <change beforePath="$PROJECT_DIR$/init.sql" afterPath="$PROJECT_DIR$/init.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,12 +31,12 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/user/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="84" column="15" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="15" />
+            <state relative-caret-position="463">
+              <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
               <folding>
-                <marker date="1517299359000" expanded="true" signature="2399:2466" ph="insert into notes... " />
-                <marker date="1517299359000" expanded="true" signature="2684:2751" ph="insert into notes... " />
-                <marker date="1517299359000" expanded="true" signature="2782:2849" ph="insert into notes... " />
+                <marker date="1517299803000" expanded="true" signature="2397:2464" ph="insert into notes... " />
+                <marker date="1517299803000" expanded="true" signature="2699:2766" ph="insert into notes... " />
+                <marker date="1517299803000" expanded="true" signature="2797:2864" ph="insert into notes... " />
               </folding>
             </state>
           </provider>
@@ -336,13 +332,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Library/Python/2.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1803">
-          <caret line="363" column="32" lean-forward="true" selection-start-line="363" selection-start-column="32" selection-end-line="363" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Python/2.7/site-packages/wtforms/ext/sqlalchemy/fields.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -691,14 +680,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2/__builtin__.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="872" column="19" lean-forward="false" selection-start-line="872" selection-start-column="6" selection-end-line="872" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="84" column="15" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="15" />
+        <state relative-caret-position="463">
+          <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
           <folding>
-            <marker date="1517299359000" expanded="true" signature="2399:2466" ph="insert into notes... " />
-            <marker date="1517299359000" expanded="true" signature="2684:2751" ph="insert into notes... " />
-            <marker date="1517299359000" expanded="true" signature="2782:2849" ph="insert into notes... " />
+            <marker date="1517299803000" expanded="true" signature="2397:2464" ph="insert into notes... " />
+            <marker date="1517299803000" expanded="true" signature="2699:2766" ph="insert into notes... " />
+            <marker date="1517299803000" expanded="true" signature="2797:2864" ph="insert into notes... " />
           </folding>
         </state>
       </provider>
