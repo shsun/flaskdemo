@@ -1,10 +1,10 @@
-from flask import flash, redirect, render_template, url_for, request
+from flask import flash, redirect, render_template, url_for, request, current_app
 from flask_login import login_required, current_user
 
 from . import user
 from forms import UserUpdateForm, NoteForm
 from .. import db
-from ..models import User, Career, Note
+from ..models import User, Career, Note, Redis
 
 from sqlalchemy import insert, select, update, delete
 
@@ -51,6 +51,10 @@ def add_note():
     """
     Add a role to the database
     """
+    app = current_app._get_current_object()
+
+    redis_conn = Redis.new_connection(app.config)
+
     add_note = True
     user = current_user
     form = NoteForm()
@@ -59,11 +63,16 @@ def add_note():
     if bol:
         note = Note(title=form.title.data,
                     body=form.body.data)
+
+        key = "data-cached:notes-title-%s" % (note.title)
+        tmp_note = Redis.get_data(redis_conn, key)
+
         try:
             # add role to the database
             user.notes.append(note)
             db.session.add(note)
             db.session.commit()
+            Redis.set_data(redis_conn, key, note)
             flash('You have successfully added a new note to the user.')
         except BaseException, e:
             # in case role name already exists

@@ -5,6 +5,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import db, login_manager
 
+import redis
+import pickle
+
 
 class User(UserMixin, db.Model):
     """
@@ -156,3 +159,28 @@ class Note(db.Model):
             'Description': self.body,
             'User': self.user.username
         }
+
+
+class Redis:
+    '''
+
+    '''
+    @staticmethod
+    def new_connection(configObject):
+        '''
+        new connection
+        :return:
+        '''
+        r = redis.StrictRedis(host=configObject['REDIS_HOST'], port=configObject['REDIS_PORT'], db=0)
+        return r
+
+    @staticmethod
+    def set_data(r, key, data, ex=None):
+        r.set(key, pickle.dumps(data), ex)
+
+    @staticmethod
+    def get_data(r, key):
+        data = r.get(key)
+        if data is None:
+            return None
+        return pickle.loads(data)
