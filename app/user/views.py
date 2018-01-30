@@ -6,6 +6,8 @@ from forms import UserUpdateForm, NoteForm
 from .. import db
 from ..models import User, Career, Note
 
+from sqlalchemy import insert, select, update, delete
+
 
 @user.route('/viewprofile', methods=['GET', 'POST'])
 @login_required
@@ -36,7 +38,7 @@ def list_notes():
     user = current_user
     try:
         notes = user.notes
-    except:
+    except BaseException, e:
         notes = False
 
     return render_template('user/notes.html', user=user,
