@@ -109,13 +109,43 @@ def method_b(connection):
         raise
 
 
+@user.route('/notes/trans_1', methods=['GET', 'POST'])
+def method_a_1():
+    '''
+    transaction demo
+    :return:
+    '''
+    note = Note(title=None, body=None)
+    note.title = 'abc-001'
+    note.body = 'xyz--001'
+    note.user_id = 1
+    try:
+        db.session.add(note)
+        method_b_1()
+        db.session.commit()
+    except BaseException, e:
+        raise
+    return 'ok'
+
+
+def method_b_1():
+    note = Note(title=None, body=None)
+    note.title = 'abc-100'
+    note.body = 'xyz--100'
+    note.user_id = 1
+    try:
+        db.session.add(note)
+        db.session.commit()
+    except BaseException, e:
+        raise
+
+
 @user.route('/notes/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_note(id):
     """
     Edit a role
     """
-
     add_note = False
     note = Note.query.get_or_404(id)
     form = NoteForm(obj=note)
