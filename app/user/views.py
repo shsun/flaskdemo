@@ -78,29 +78,36 @@ def add_note():
     return response
 
 
-'''
-# method_a starts a transaction and calls method_b
-def method_a(connection):
-    trans = connection.begin() # open a transaction
+
+@user.route('/notes/trans', methods=['GET', 'POST'])
+def method_a( ):
+    '''
+    transaction demo
+    :return:
+    '''
+    connection = db.engine.connect()
+    trans = connection.begin()
     try:
+        connection.execute("insert into notes(title,user_id,body) values ('bat_004', 1, 'lala')")
         method_b(connection)
-        trans.commit()  # transaction is committed here
+        trans.commit()
     except:
-        trans.rollback() # this rolls back the transaction unconditionally
+        trans.rollback()
         raise
+    return 'ok'
 
 
-# method_b also starts a transaction
 def method_b(connection):
-    trans = connection.begin()  # open a transaction - this runs in the context of method_a's transaction
+    trans = connection.begin()
     try:
-        connection.execute("insert into mytable values ('bat', 'lala')")
-        connection.execute(mytable.insert(), col1='bat', col2='lala')
-        trans.commit()  # transaction is not committed yet
+        connection.execute("insert into notes(title,user_id,body) values ('bat_104', 1, 'lala')")
+        connection.execute("insert into notes(title,user_id,body) values ('bat_204', 1, 'lala')")
+        trans.commit()
     except:
-        trans.rollback()  # this rolls back the transaction unconditionally
+        trans.rollback()
         raise
-'''
+
+
 
 
 @user.route('/notes/edit/<int:id>', methods=['GET', 'POST'])
