@@ -8,6 +8,10 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 
+from flask.ext.cache import Cache
+
+
+
 # local imports
 from config import app_config
 
@@ -25,6 +29,10 @@ def create_app(config_name):
 
     app.config.from_object(app_config[config_name])
     app.config.from_pyfile('config.py')
+
+    # Check Configuring Flask-Cache section for more details
+    app.cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+
     # initialize the flask objects
     Bootstrap(app)
     db.init_app(app)

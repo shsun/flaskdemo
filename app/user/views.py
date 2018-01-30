@@ -1,4 +1,4 @@
-from flask import flash, redirect, render_template, url_for, request, current_app
+from flask import flash, redirect, render_template, url_for, request, current_app as app
 from flask_login import login_required, current_user
 
 from . import user
@@ -8,6 +8,7 @@ from ..models import User, Career, Note, Redis
 
 from sqlalchemy import insert, select, update, delete
 
+from flask.ext.cache import Cache
 
 @user.route('/viewprofile', methods=['GET', 'POST'])
 @login_required
@@ -31,6 +32,7 @@ def viewprofile():
 
 @user.route('/notes')
 @login_required
+@app.cache.cached(timeout=50)
 def list_notes():
     """
     List all roles
@@ -51,9 +53,9 @@ def add_note():
     """
     Add a role to the database
     """
-    app = current_app._get_current_object()
+    curr_app = app._get_current_object()
 
-    redis_conn = Redis.new_connection(app.config)
+    redis_conn = Redis.new_connection(curr_app.config)
 
     add_note = True
     user = current_user
