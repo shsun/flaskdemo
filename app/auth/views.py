@@ -48,6 +48,7 @@ def login():
                 form.password.data):
             # log employee in
             login_user(user)
+            print 'notes=', user.notes
             # check admin status
             if user.is_admin:
                 return redirect(url_for('home.admin_dashboard'))
