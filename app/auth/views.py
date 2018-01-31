@@ -41,7 +41,6 @@ def login():
     """
     form = LoginForm()
     if form.validate_on_submit():
-
         # check whether employee exists in the database and whether
         # the password entered matches the password in the database
         user = User.query.filter_by(email=form.email.data).first()
@@ -49,14 +48,12 @@ def login():
                 form.password.data):
             # log employee in
             login_user(user)
-
             # check admin status
             if user.is_admin:
                 return redirect(url_for('home.admin_dashboard'))
             else:
                 # redirect to the dashboard page after login
                 return redirect(url_for('home.dashboard'))
-
         # when login details are incorrect
         else:
             flash('Invalid email or password.')

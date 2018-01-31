@@ -33,11 +33,14 @@ def home():
 
 config_name = os.getenv('FLASK_CONFIG')
 config_name = 'development'
+print 'before create_app'
 app = create_app(config_name)
+print 'after create_app'
 #
 
 
 if __name__ == '__main__':
     app.debug = True
+    print 'before app run'
     app.run('127.0.0.1', 5000, None)
 

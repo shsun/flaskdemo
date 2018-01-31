@@ -26,6 +26,7 @@ login_manager = LoginManager()
 
 
 def create_app(config_name):
+    print 'create_app----', config_name
     app = Flask(__name__, instance_relative_config=True)
 
     app.config.from_object(app_config[config_name])
@@ -56,7 +57,8 @@ def create_app(config_name):
         app.redisconn.set('name', 'admin')
         app.redisconn.set('age', 18)
     except Exception, e:
-        app.logger.error('What the fuck is going on , the StrictRedisCluster Connect Error, app will exit')
+        #app.logger.error('What the fuck is going on , the StrictRedisCluster Connect Error, app will exit')
+        print ''
         #sys.exit(1)
 
     # initialize the flask objects

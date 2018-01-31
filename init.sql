@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS `careers` (
   `id` bigint(50) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `name` varchar(60) NOT NULL UNIQUE COMMENT 'name',
   `description` varchar(200) DEFAULT NULL COMMENT 'username',
-  `users` varchar(60) DEFAULT NULL COMMENT 'users',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='';
 
@@ -21,7 +20,6 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `id` bigint(50) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `name` varchar(60) NOT NULL UNIQUE COMMENT 'name',
   `description` varchar(200) DEFAULT NULL COMMENT 'username',
-  `users` varchar(60) DEFAULT NULL COMMENT 'users',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='';
 

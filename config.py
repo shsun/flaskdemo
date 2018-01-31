@@ -50,7 +50,7 @@ class DevelopmentConfig(Config):
     # SESSION_REFRESH_EACH_REQUEST = True
     SQLALCHEMY_BINDS = None
     SQLALCHEMY_COMMIT_ON_TEARDOWN = False
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@127.0.0.1/notes_db'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@192.168.1.172/notes_db'
     # 'sqlite:///' + os.path.join(basedir, 'instance', 'development.db')
     SQLALCHEMY_ECHO = True
     SQLALCHEMY_MAX_OVERFLOW = None
