@@ -6,9 +6,6 @@ from forms import UserUpdateForm, NoteForm
 from .. import db
 from ..models import User, Career, Note, Redis
 
-from sqlalchemy import insert, select, update, delete
-
-from flask.ext.cache import Cache
 
 @user.route('/viewprofile', methods=['GET', 'POST'])
 @login_required
@@ -32,7 +29,7 @@ def viewprofile():
 
 @user.route('/notes')
 @login_required
-@app.cache.cached(timeout=50)
+# @app.cache.cached(timeout=50)
 def list_notes():
     """
     List all roles
