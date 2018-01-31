@@ -44,7 +44,7 @@ def create_app(config_name):
         # 'CACHE_REDIS_URL':'redis://localhost:6379'
     }
     # Check Configuring Flask-Cache section for more details
-    # app.cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+    #app.cache = Cache(app, config={'CACHE_TYPE': 'simple'})
     app.cache = Cache(config=cache_configuration)
 
     startup_nodes = [

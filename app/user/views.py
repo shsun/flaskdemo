@@ -1,11 +1,18 @@
-from flask import flash, redirect, render_template, url_for, request, current_app as app
+from flask import flash, redirect, render_template, url_for, request, current_app
 from flask_login import login_required, current_user
+
+from run import app
+
+# from flask.ext.cache import Cache
+from flask_caching import Cache
 
 from . import user
 from forms import UserUpdateForm, NoteForm
 from .. import db
 from ..models import User, Career, Note, Redis
 
+
+# cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 @user.route('/viewprofile', methods=['GET', 'POST'])
 @login_required
@@ -27,7 +34,7 @@ def viewprofile():
                            user=user, form=form, action='Edit')
 
 
-#@app.cache.cached(timeout=50)
+@app.cache.cached(timeout=50000000)
 @user.route('/notes')
 @login_required
 def list_notes():
