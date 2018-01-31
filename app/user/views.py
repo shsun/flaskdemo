@@ -27,9 +27,9 @@ def viewprofile():
                            user=user, form=form, action='Edit')
 
 
+#@app.cache.cached(timeout=50)
 @user.route('/notes')
 @login_required
-# @app.cache.cached(timeout=50)
 def list_notes():
     """
     List all roles
