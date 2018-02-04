@@ -1,0 +1,1269 @@
+"<style type="text/css">
+.myOrd {
+    font-family: "微软雅黑";
+    font-size: 12px;
+    width: 910px;
+    min-height: 900px;
+    overflow: hidden;
+}
+
+.myOrd .topBar {
+    background-color: #E4E4E4;
+    margin: 10px 0px;
+    width: 910px;
+    height: 34px;
+    overflow: hidden;
+}
+
+.myOrd .topBar .topBarFont {
+    margin-top: 4px;
+    margin-left: 20px;
+    width: 139px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #5f3423;
+    overflow: hidden;
+}
+
+.myOrd .seaHed {
+    background-color: #E4E4E4;
+    font-family: "微软雅黑";
+    font-size: 13px;
+    width: 910px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.myOrd .seaHed .rect {
+    margin-left: 15px;
+    margin-top: 9px;
+    float: left;
+    color: #333333;
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.myOrd .seaHed .arrPic {
+    margin-top: 10px;
+    float: left;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.myOrd .seaHed .moreSea {
+    background-color: #FFFCE8;
+    margin-top: 12px;
+    margin-left: 292px;
+    float: left;
+    color: #333333;
+    width: 165px;
+    height: 26px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.myOrd .seaHed .moreSea .moreSeaFont {
+    float: left;
+    color: #333333;
+    margin-left: 38px;
+    margin-top: 2px;
+    height: 25px;
+    width: 80px;
+}
+
+.myOrd .seaHed .moreSea .arrPict {
+    margin-top: 2px;
+    margin-left: 7px;
+    float: left;
+    height: 16px;
+    width: 16px;
+}
+
+.myOrd .seaBdy {
+    background-color: #FFFCE8;
+    font-family: "微软雅黑";
+    font-size: 13px;
+    width: 910px;
+    height: 167px;
+    overflow: hidden;
+    display: none;
+}
+
+.myOrd .seaBdy .rowOne {
+    margin-top: 15px;
+    width: 910px;
+    height: 26px;
+    overflow: hidden;
+}
+
+.myOrd .seaBdy .rowOne .colOne {
+    color: #333333;
+    margin-top: 2px;
+    text-align: right;
+    float: left;
+    width: 100px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.myOrd .seaBdy .rowOne .colTwo {
+    color: #333333;
+    float: left;
+    width: 185px;
+    overflow: hidden;
+}
+
+.myOrd .seaBdy .rowOne .colTwo1 {
+    color: #333333;
+    float: left;
+    overflow: hidden;
+}
+
+.myOrd .seaBdy .rowOne .colTwo input {
+    float: left;
+    width: 180px;
+    height: 22px;
+    overflow: hidden;
+    border: #CCCCCC solid 1px;
+}
+
+.myOrd .seaBdy .rowOne .colTwo select {
+    float: left;
+    width: 185px;
+    height: 26px;
+    overflow: hidden;
+    border: #CCCCCC solid 1px;
+}
+
+.myOrd .seaBdy .rowOne .colThr input {
+    float: left;
+    width: 75px;
+    height: 22px;
+    overflow: hidden;
+    border: #CCCCCC solid 1px;
+}
+
+.myOrd .seaBdy .rowOne .colFou {
+    margin-top: 3px;
+    margin-left: 5px;
+    float: left;
+    width: 18px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.myOrd .seaBdy .seaBtn {
+    width: 910px;
+    height: 45px;
+    overflow: hidden;
+}
+
+.myOrd .seaBdy .seaBtn input {
+    margin-top: 9px;
+    margin-left: 100px;
+    width: 92px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.myOrd .myOrdTablHed {
+    background-color: #E4E4E4;
+    color: #333333;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    font-weight: bold;
+    width: 910px;
+    height: 30px;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.myOrd .myOrdTablHed .colDet {
+    margin-left: 160px;
+
+    float: left;
+    width: 56px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.myOrd .myOrdTablHed .colSel {
+    margin-left: 246px;
+
+    float: left;
+    width: 56px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.myOrd .myOrdTablHed .colPrce {
+    margin-left: 40px;
+
+    float: left;
+    width: 56px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.myOrd .myOrdTablHed .colStat {
+    margin-left: 70px;
+
+    float: left;
+    width: 56px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.myOrd .myOrdTablHed .colArrow {
+    float: left;
+    width: 16px;
+    height: 30px;
+}
+
+.myOrd .myOrdTablHed .colOpe {
+    margin-left: 70px;
+
+    float: left;
+    width: 56px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet {
+    font-family: "微软雅黑";
+    font-size: 13px;
+    width: 910px;
+    height: auto;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .hed {
+
+    background-color: #F2F2F2;
+    margin-top: 10px;
+    width: 910px;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .hed .ordNum {
+    float: left;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 15px;
+    width: 215px;
+    height: 28px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .hed .pieNum {
+    float: left;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 20px;
+    width: 270px;
+    height: 28px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .hed .weiNum {
+    float: left;
+    color: #333333;
+    font-weight: bold;
+    height: 28px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .hed .date {
+    float: left;
+    font-size: 12px;
+    color: #666666;
+    margin-left: 100px;
+    width: 160px;
+    height: 28px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .hed .fac {
+    float: left;
+    font-size: 12px;
+    color: #666666;
+    width: 110px;
+    height: 28px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod {
+    background-color: #FFFFFF;
+    padding-top: 6px;
+    width: 910px;
+    height: 139px;
+    overflow: hidden;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.myOrd .ordDet .bod .picCol {
+    float: left;
+    height:100%;
+    width: 75px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .picCol .pic {
+    margin-left: 10px;
+    margin-top: 8px;
+    width: 65px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .picCol .salMode {
+    color:#ff6600;
+    font-size:11px;
+    margin-top: 12px;
+    width: 100%;
+    overflow: hidden;
+    text-align:center;
+}
+
+.myOrd .ordDet .bod .itemsAll {
+    border-right: 1px solid #F2F2F2;
+    float: left;
+    margin-left: 10px;
+    width: 455px;
+    height: 139px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.myOrd .ordDet .bod .itemsAll .items {
+    width: 455px;
+    height: 111px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.myOrd .ordDet .bod .itemsAll .items .item {
+    width: 455px;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .itemBottom {
+
+    width: 455px;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .items .item .proName {
+    float: left;
+    width: 116px;
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.myOrd .ordDet .bod .items .item .desDimOrd {
+    float: left;
+    width: 95px;
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.myOrd .ordDet .bod .items .item .perMoney {
+    float: left;
+    width: 75px;
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.myOrd .ordDet .bod .items .item .nameStlgd {
+    float: left;
+    width: 59px;
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.myOrd .ordDet .bod .items .item .pieNumber {
+    float: left;
+    width: 38px;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.myOrd .ordDet .bod .items .item .weight {
+    float: left;
+    width: 67px;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.myOrd .ordDet .bod .colInfo {
+    border-right: 1px solid #F2F2F2;
+    float: left;
+    width: 368px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO {
+    width: 364px;
+    height: 111px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cOne {
+    border-right: 1px solid #F2F2F2;
+    float: left;
+    width: 134px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cOne .cOneROne {
+   /*  color: #999999;*/
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 12px; 
+    width: 97px;
+    height: 17px;
+    overflow: hidden;
+    display: none;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cOne .cOneROneTemp {
+   /*  color: #999999;*/
+    font-size: 12px;
+    margin-left: 5px;
+ /*   margin-top: 15px; */
+    width: 97px;
+    height: 17px;
+    overflow: hidden;
+  /*  text-decoration: line-through;*/
+    display: none;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cOne .cOneRTwo {
+    color: #CC0000;
+    font-size: 13px;
+    font-weight: bold;
+ /*   margin-left: 23px;*/
+    margin-top: 20px;  
+    width: 100%;
+    height: 19px;
+    overflow: hidden;
+    text-align:center;
+}
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cOne .cOneRTwoTemp {
+    font-family: "微软雅黑";
+    font-size: 11px;
+    margin-left: 3px;
+    margin-top: 5px; 
+    width: 100%;
+    height: 17px;
+    overflow: hidden;
+    text-align:center;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cOne .cOneRThr .a1 {
+    color: #666666;
+    font-size: 12px;
+    margin-left: 25px;
+    margin-top: 3px;
+    width: 110px;
+    height: 17px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cOne .cOneRThr .a2 {
+    color: #666666;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 3px;
+    width: 110px;
+    height: 17px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cOne .cOneRThr .a2:hover {
+    color: #d01126;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 3px;
+    width: 110px;
+    height: 17px;
+    overflow: hidden;
+    text-decoration: underline;
+}
+
+.cusSelf .a3 {
+    color: #666666;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.cusSelf .a3:hover {
+    color: #d01126;
+    font-size: 12px;
+    overflow: hidden;
+    text-decoration: underline;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cTwo {
+    border-right: 1px solid #F2F2F2;
+    float: left;
+    width: 98px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cTwo .stok {
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+    width: 95px;
+    height: 16px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 28px;
+    margin-left: 2px;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cTwo .cusSelf {
+    color: #666666;
+    font-size: 12px;
+    width: 60px;
+    height: 15px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 6px;
+    margin-left: 19px;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr {
+    float: left;
+    width: 130px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .payBtn {
+    background-color: #A91818;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 32px;
+    margin-top: 15px;
+    width: 79px;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .payBtn:hover {
+    cursor: pointer;
+    background-color: #FF6600;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 32px;
+    margin-top: 15px;
+    width: 79px;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .cO {
+    color: #006699;
+    font-size: 13px;
+    margin-top: 10px;
+    width: 145px;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .cO .cOCle {
+
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .cO .cOCle a {
+    color: #9A5123;
+    float: left;
+    margin-left: 44px;
+    width: 58px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .cO .cOCle a:hover {
+    color: #BDC0FF;
+    margin-left: 44px;
+    float: left;
+    width: 58px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .cO .cOCle:hover {
+
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .cO .cOChkDtl {
+    float: left;
+    margin-left: 5px;
+    width: 5px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowO .cThr .cO .cOChkDtl:hover {
+    color: #BDC0FF;
+    float: left;
+    margin-left: 5px;
+    width: 5px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.myOrd .ordDet .bod .colInfo .colInfoRowR {
+    background-color: #F0EDE5;
+    color: #666666;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    width: 368px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.pagination {
+    width: 900px;
+    height: 45px;
+    font-family: "微软雅黑";
+    font-size: 13px;
+    color: #666666;
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.pagination .paginationBtn {
+    padding: 10px 0px;
+    display: inline-block;
+}
+
+.paginationBtn .arrowPage {
+    float: left;
+    width: 79px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    border: solid 1px #DADADA;
+    background-color: #F6F6F6;
+    margin: 0px 5px;
+    display: block;
+}
+
+.paginationBtn .numPage {
+    float: left;
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    border: solid 1px #DADADA;
+    background-color: #F6F6F6;
+    margin: 0px 5px;
+    display: block;
+}
+
+.paginationBtn .omitPage {
+    float: left;
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    margin: 0px 5px;
+    display: block;
+}
+
+.paginationBtn .pageImg {
+
+}
+
+.paginationBtn .active {
+    background-color: #B4A46B;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.paginationBtn .notActive {
+    background-color: #F6F6F6;
+    color: #DADADA;
+}
+</style>
+<div>
+<div class="myOrd">
+<div class="topBar">
+    <div class="topBarFont">
+        <span>我的现货订单</span>
+    </div>
+</div>
+
+<form id="myOrderForm"  method="get">
+    <div class="ws_queryBlock" style="width: 898px;margin-bottom:20px;">
+        <div class="qb_head">
+            <div>
+                <div class="qb_head_word font13DarkRedWeight"><div style="width:60px;float:left;color:#d01126;font-weight:bold;font-size:13px;">筛选条件</div>
+                    <div style="margin-right:30px;float: right;width: 700px;text-align: right;font-weight:normal;color: #666666;">
+                        <% if(has(SOMAINSUMLIST)&&SOMAINSUMLIST.~size>0){ %>
+                        <span> 总订单数：</span>
+                        <span style="color: #d01126;font-weight: bold;font-size: 16px;">${SOMAINSUMLIST[0].ordNumSum}</span>
+                        个 &nbsp&nbsp&nbsp&nbsp&nbsp
+                        <span> 总金额：</span>
+                        <span class="monyTotlSpan" style="color: #d01126;font-weight: bold;font-size: 16px;">${SOMAINSUMLIST[0].amtOrdTtl}</span>
+                        元 &nbsp&nbsp&nbsp&nbsp&nbsp
+                        <span> 总吨数：</span>
+                        <% if(SOMAINSUMLIST[0].wtOrdTtl==""||isEmpty(SOMAINSUMLIST[0].wtOrdTtl)){ %>
+                        <span style="color: #d01126;font-weight: bold;font-size: 16px;"> 0 </span>
+                        吨
+                        <%
+                        }else{
+                        %>
+                         <span style="color: #d01126;font-weight: bold;font-size: 16px;">${SOMAINSUMLIST[0].wtOrdTtl}</span>
+                        吨
+ 			<%
+                        }}
+                        %>
+                    </div>
+                </div>
+            </div>
+            <div class="qb_line"></div>
+        </div>
+        <div class="qb_content">
+            <table class="form_table">
+                <COLGROUP>
+                    <COL width="8%"/>
+                    <COL width="20%"/>
+                    <COL width="8%"/>
+                    <COL width="20%"/>
+                    <COL width="8%"/>
+                    <COL width="20%"/>
+                </COLGROUP>
+                <tr>
+                    <td align="right" style="color:#666666"><label>订单号：</label></td>
+                    <td align="left"><input class="ws_input" id="idOrd" name="idOrd" value="${S_PARAM.idOrd}"
+                                            style="width:91%"/></td>
+                    <td align="right"><label>仓库名称：</label></td>
+                    <td align="left"><input class="ws_input" id="nameWhse" name="nameWhse" value="${S_PARAM.nameWhse}"
+                                            style="width:91%"/>
+                    </td>
+                    <td align="right"><label>卖家名称：</label></td>
+                    <td align="left"><input class="ws_input" id="nameOrgSell" name="nameOrgSell"
+                                            value="${S_PARAM.nameOrgSell}"
+                                            style="width:91%"/></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>物流方式：</label></td>
+                    <td align="left">
+                        <div id="cdeTypLgs"></div>
+                        <input id="cdeTypLgsInput" name="cdeTypLgsInput" value="${S_PARAM.cdeTypLgs}"
+                               style="display:none;"/>
+                    </td>
+                    <td align="right"><label>品种大类：</label></td>
+                    <td align="left"><input class="ws_input" id="nameUpperCatgProd" name="nameUpperCatgProd"
+                                            value="${S_PARAM.nameUpperCatgProd}" style="width:91%"/></td>
+                    <td align="right"><label>支付状态：</label></td>
+                    <td align="left">
+                        <div id="cdeStsPay"></div>
+                        <input id="cdeStsPayInput" name="cdeStsPayInput" value="${S_PARAM.cdeStsPay}"
+                               style="display:none;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" style="color:#666666"><label>订单状态：</label></td>
+                    <td align="left">
+                        <div id="cdeStsOrd"></div>
+                        <input id="cdeStsOrdInput" name="cdeStsOrdInput" value="${S_PARAM.cdeStsOrd}"
+                               style="display:none;"/>
+                    </td>
+                    <td align="right"><label>运输方式：</label></td>
+                    <td align="left">
+                        <div id="cdeTypTrsp"></div>
+                        <input id="cdeTypTrspInput" name="cdeTypTrspInput" value="${S_PARAM.cdeTypTrsp}"
+                               style="display:none;"/>
+                    </td>
+                    <td align="right"><label>创建时间：</label></td>
+                    <td align="left"><input class="ws_input" id="releaseDateF" name="releaseDateF"
+                                            value="${S_PARAM.releaseDateF}" style="width:39%"/>
+                        --
+                        <input class="ws_input" id="releaseDateL" name="releaseDateL" value="${S_PARAM.releaseDateL}"
+                               style="width:40%"/></td>
+                </tr>
+            </table>
+            <div class="buttonLine" style="position:relative;left:90px; margin-top:10px;height:30px;">
+                <div class="goldenBtn queryFormBtn" id="qureryByCon" style="float:left;">查询</div>
+                <div class="goldenBtn exportFormBtn" id="exportOrdBtn" style="margin-left:20px;float:left;">导出订单</div>
+            </div>
+        </div>
+        <div class="qb_bottomLine"></div>
+    </div>
+</form>
+
+
+<div class="myOrdTablHed" id="myOrdTablHed">
+    <div class="colDet">
+        <span>订单详情</span>
+    </div>
+    <div class="colSel">
+        <span></span>
+    </div>
+    <div class="colPrce">
+        <span>订单金额</span>
+    </div>
+    <div class="colStat">
+        <span>订单状态</span>
+    </div>
+    <div class="colArrow">
+    </div>
+    <div class="colOpe">
+        <span>操作</span>
+    </div>
+</div>
+<%
+if(has(SOMAINLIST)&&SOMAINLIST.records.~size>0){
+for(SOMAIN in SOMAINLIST.records){
+%>
+<div class="ordDet">
+    <div class="hed">
+        <div class="ordNum"><span>订单编号：${SOMAIN.idOrd}</span>
+            <input name="fpPayOrdList[0].idOrdBusiness" value="${SOMAIN.idOrd}" style="display:none;"/></div>
+        <div class="pieNum"><span>客户名称：${SOMAIN.nameCust}</span></div>
+        <div class="weiNum"><span></span></div>
+        <div class="date"><span>${SOMAIN.tmstpCreaOrd,dateFormat="yyyy年MM月dd日   HH:mm:ss"}</span></div>
+        <div class="time"><span></span></div>
+        <div class="fac"><span>${SOMAIN.nameOrgSell}</span></div>
+    </div>
+    <div class="bod">
+        <div class="picCol">
+           <div class="pic">
+              <img src="${S_URL}/${SOMAIN.namePathBsgraph}">
+           </div>
+ <%
+   if(SOMAIN.cdeSaleMode == 'T'){
+ %>         
+           <div class="salMode">
+              <span> &nbsp*按吨销售订单</span>
+           </div>
+ <%
+   }
+ %>            
+        </div>
+        <div class="itemsAll">
+            <div class="items">
+                <%
+                var s = 0;
+                for(SOITM in SOITMLIST){
+                if(SOMAIN.idOrd==SOITM.idOrd){
+                s= s+1;
+                if(s%2==1) {
+                %>
+                <div class="item" style="background-color:#FFFFFF">
+                    <div class="proName" title="" style="cursor: pointer"><span>${SOITM.nameCatgProd}</span></div>
+                    <div class="nameStlgd" title="" style="cursor: pointer"><span>${SOITM.nameStlgd}</span></div>
+                    <div class="desDimOrd" title="" style="cursor: pointer"><span>${SOITM.desDimOrd}</span></div>
+                    <div class="perMoney" title="" style="cursor: pointer"><span>${SOITM.prceBids}元/吨</span></div>
+                    <div class="pieNumber" title="" style="cursor: pointer"><span>${SOITM.numReso}件</span></div>
+                    <div class="weight" title="" style="cursor: pointer"><span>${SOITM.wtOrdTtl}吨</span></div>
+                </div>
+
+                <%
+                }else{
+                %>
+                <div class="item" style="background-color:#F7F7F9">
+                    <div class="proName" title="" style="cursor: pointer"><span>${SOITM.nameCatgProd}</span></div>
+                    <div class="nameStlgd" title="" style="cursor: pointer"><span>${SOITM.nameStlgd}</span></div>
+                    <div class="desDimOrd" title="" style="cursor: pointer"><span>${SOITM.desDimOrd}</span></div>
+                    <div class="perMoney" title="" style="cursor: pointer"><span>${SOITM.prceBids}元/吨</span></div>
+                    <div class="pieNumber" title="" style="cursor: pointer"><span>${SOITM.numReso}件</span></div>
+                    <div class="weight" title="" style="cursor: pointer"><span>${SOITM.wtOrdTtl}吨</span></div>
+                </div>
+                <%
+                }}}
+                %>
+            </div>
+            <div class="itemBottom" style="background-color:#FFFFCC">
+                <div style="text-align:left;width:190px;float:left;padding-left:10px;"><span>${SOMAIN.nameUpperCatgProd}</span></div>
+                <div style="text-align:right;width:96px;float:left;"><span>合计：</span></div>
+                <div class="numResoDiv" style="text-align:right;width:70px;float:left;cursor: pointer;"><span>${SOMAIN.numReso}件</span></div>
+                <div class="wtOrdTtlDiv" style="text-align:center;width:88px;float:left;cursor: pointer;"><span>${SOMAIN.wtOrdTtl}吨</span></div>
+            </div>
+        </div>
+        <div class="colInfo">
+            <div class="colInfoRowO">
+                <div class="cOne">
+                    <div class="cOneROne">货:<span class="cOneROnePrceHuo">${SOMAIN.amtOrdTtl}</span></div>
+                    <div class="cOneROneTemp">运:<span class="cOneROnePrceYun">${SOMAIN.amtTrspTtl}</span></div>
+                    <div class="cOneRTwo" style="cursor: pointer" stsTemp="${SOMAIN.cdeStsOrd}"><span class="cOneRTwoPrce" stsTemp="${SOMAIN.cdeStsOrd}">${SOMAIN.amtOrdTtl}</span></div>
+                    <div class="cOneRTwoTemp"><span>（含运费：</span><span class="cOneRTwoTempSpan">${SOMAIN.amtTrspTtl}</span><span>）</span></div>
+                    <div class="cOneRThr" style="margin-top:5px;" >
+                     <% if(SOMAIN.cdeClsQual=='FJH' && SOMAIN.cdeTypOrd=='30' && SOMAIN.cdeOrgSell=='1001005800') {%>
+                        <span  class="a1">不含税</span>
+                        <%} else {%>
+                        <span  class="a1">全款</span>
+                         <%}%>
+                        <a href="javascript:void(0);" class="a2"><span class="cdeTypPaySpan" paySts="${SOMAIN.cdeStsPay}" ordSts="${SOMAIN.cdeStsOrd}" ordId="${SOMAIN.idOrd}">${SOMAIN.cdeTypPay}</span></a>
+                    </div>
+                </div>
+                <div class="cTwo">
+                
+                   <div class="stok"><span>${SOMAIN.cdeStsOrd}</span></div>
+                   <div class="cusSelf">
+                    <%if(SOMAIN.cdeTypLgs=="配送"){ %>
+
+                   <a href="javascript:void(0);" class="a3"><span class="cdeTypLgsSpan" ordId="${SOMAIN.idOrd}" stsOrd="${SOMAIN.cdeStsOrd}">${SOMAIN.cdeTypLgs}</span></a>
+	 	<% }else{%>
+                   <span>${SOMAIN.cdeTypLgs}</span>
+                 <%}%>  
+                   </div>
+                </div>
+                <div class="cThr">
+                    <div class="buttonLine" style="margin-top:22px;margin-left:22px;">
+                        <% if(SOMAIN.cdeStsPay=="0"){
+                        if(SOMAIN.cdeStsOrd=="提交" || SOMAIN.cdeStsOrd=="编辑" || SOMAIN.cdeStsOrd=="已撤销"){
+                        %>
+                        <div class="goldenBtn" style="background:#F0EDE5"> 待审核 </div>
+                    </div>
+	                <% }
+	                  else if(SOMAIN.cdeStsOrd=="审核未通过"){
+	                 %>
+	                   <div class="goldenBtn" style="background:#F0EDE5">审核未通过</div>
+		    </div>
+                        <% }
+                           else if(SOMAIN.cdeStsOrd=="运费待客户确认"){
+                         %>
+                          <div class="goldenBtn cdeStsOrdSpan" ordId="${SOMAIN.idOrd}">
+                                    <a style="color:#5f3423"
+                                      target="_blank">确认运费</a>
+                          </div>
+                                
+                    </div>
+                       <%  }
+                	 else{
+                            if(SOMAIN.cdeTypPay=="线上支付"){
+                             if(has(ISTRADELIST)){
+                               if(ISTRADELIST==0){%>
+                                 <div class="goldenBtn">
+                                    <a href="${S_FINANCE_URL}/unionPay/createPayOrder?ordId=${SOMAIN.id}" style="color:#5f3423"
+                                      target="_blank">付 款</a></div>
+                                </div>
+                       <%}
+                           if(ISTRADELIST==1){%>
+                              <div class="goldenBtn" style="background:#F0EDE5">
+                                付 款
+                             </div>
+                  </div>
+                  <%
+                    }
+                    }
+                    }else{
+                  %>
+             <div class="goldenBtn" style="background:#F0EDE5">线下支付</div>
+	</div>
+         <% } }
+         }else if(SOMAIN.cdeStsPay=="1"){
+         %>
+               <div class="goldenBtn" style="background:#F0EDE5">付款成功 </div>
+	</div>
+	<%
+	   }else{
+	%>
+	    <div class="goldenBtn" style="background:#F0EDE5">支付过账</div>
+   		 
+	</div>
+	<%
+	}
+	%>
+	
+<div class="cO">
+    <div class="cOCle"><a href="${S_URL}/soMain/returnOrdDetail/${SOMAIN.id}">查看明细</a></div>
+    <div class="cOCle"><a href="${S_URL}/scCust/zhaoche">我要找车</a></div>
+    <div class="cOChkDtl"><span></span></div>
+</div>
+</div>
+</div>
+<div class="colInfoRowR">
+    <span>${SOMAIN.nameWhse}</span>
+</div>
+</div>
+</div>
+</div>
+<% }}
+%>
+</div>
+<div class="pagination">
+    <div class="paginationBtn">
+        <%if(SOMAINLIST.last>0){
+        if(SOMAINLIST.prev==0){ %>
+        <a class="arrowPage notActive" href="javascript:void(0)"><span>上一页</span><img class="pageImg"
+                                                                                      src="${S_URL}/static/images/arrow/little_arrow_left_a8a8a8.gif"/></a>
+        <% }else { %>
+        <a class="arrowPage"
+           href="${SOMAINLIST.urlParameter+SOMAINLIST.pageName}=${SOMAINLIST.prev}"><span>上一页</span><img class="pageImg"
+                                                                                                         src="${S_URL}/static/images/arrow/little_arrow_left_a8a8a8.gif"/></a>
+        <% }
+        if(SOMAINLIST.firstPage>1){%>
+        <a class="numPage" href="${SOMAINLIST.urlParameter+SOMAINLIST.pageName}=1">1</a>
+        <a class="omitPage" href="">...</a>
+        <%}%>
+        <%
+        for(var i=SOMAINLIST.firstPage;i
+        <SOMAINLIST.currentRollPage
+        ;i++){
+        if(SOMAINLIST.currentPage==i){
+        %>
+        <a class="numPage active" href="${SOMAINLIST.urlParameter+SOMAINLIST.pageName}=${i}">${i}</a>
+        <% }
+        else{%>
+        <a class="numPage" href="${SOMAINLIST.urlParameter+SOMAINLIST.pageName}=${i}">${i}</a>
+        <% }
+        }
+        if(SOMAINLIST.last> SOMAINLIST.currentRollPage){%>
+        <span class="omitPage" href="">...</span>
+        <a class="numPage"
+           href="${SOMAINLIST.urlParameter+SOMAINLIST.pageName}=${SOMAINLIST.last}">${SOMAINLIST.last}</a>
+        <%}%>
+
+
+        <% if(SOMAINLIST.next==0){ %>
+        <a class="arrowPage notActive" href="javascript:void(0)">下一页</span><img
+                src="${S_URL}/static/images/arrow/little_arrow_right_595758.gif"/></a>
+        <% }else { %>
+        <a class="arrowPage"
+           href="${SOMAINLIST.urlParameter+SOMAINLIST.pageName}=${SOMAINLIST.next}"><span>下一页</span><img
+                src="${S_URL}/static/images/arrow/little_arrow_right_595758.gif"/></a>
+        <% } }%>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    var dhxWins,w1,skin;
+    //确认运费
+    $(".cdeStsOrdSpan").bind("click", function () {
+   	 var payStsVal= $(this).attr("paySts");
+    	 var ordStsVal= $(this).attr("ordSts");
+    	 var ordIdVal= $(this).attr("ordId");
+    	 
+            dhxWins = new dhtmlXWindows();
+            dhxWins.attachViewportTo(document.body);
+            skin = skin||"dhx_terrace";
+            dhxWins.setSkin(skin);
+            var left = (document.body.clientWidth-200)/2
+            w1 = dhxWins.createWindow("w1",left,$(window).scrollTop()+300,500,300);
+            w1.setText("运费确认");
+            w1.attachURL("${S_URL}/soMain/chgCdeStsOrd/"+ordIdVal);
+            $("body").css("overflow","auto");
+	})
+	//修改配送方式
+	 $(".cdeTypLgsSpan").bind("click", function () {
+   	     var ordIdVal= $(this).attr("ordId");
+   	     var stsOrd=$(this).attr("stsOrd");
+   	     if(stsOrd=="待承运方报价" || stsOrd=="运费待客户确认"){
+	   	    dhxWins = new dhtmlXWindows();
+	            dhxWins.attachViewportTo(document.body);
+	            skin = skin||"dhx_terrace";
+	            dhxWins.setSkin(skin);
+	            var left = (document.body.clientWidth-200)/2
+	            w1 = dhxWins.createWindow("w1",left,$(window).scrollTop()+300,500, 270);
+	            w1.setText("修改配送方式");
+	            w1.attachURL("${S_URL}/soMain/chgCdeTypLgs/"+ordIdVal);
+	            $("body").css("overflow","auto");
+   	     }else{
+   	     	alert("当前订单状态不允许修改配送方式！");
+		return false;
+   	     }
+           })
+		//修改支付方式
+	$(".cdeTypPaySpan").bind("click", function () {
+	    var payStsVal= $(this).attr("paySts");
+	    var ordStsVal= $(this).attr("ordSts");
+	    var ordIdVal= $(this).attr("ordId");
+	    if( payStsVal=="0" && (ordStsVal=="编辑"||ordStsVal=="提交"||ordStsVal=="审核未通过"||ordStsVal=="已审核"||ordStsVal=="已下发")){
+            dhxWins = new dhtmlXWindows();
+//           dhxWins.enableAutoViewport(false);
+            dhxWins.attachViewportTo(document.body);
+            skin = skin||"dhx_terrace";
+            dhxWins.setSkin(skin);
+            var left = (document.body.clientWidth-200)/2
+            w1 = dhxWins.createWindow("w1",left,$(window).scrollTop()+300,500, 270);
+            w1.setText("修改订单支付方式");
+            w1.attachURL("${S_URL}/soMain/chgOrdPayTyp/"+ordIdVal);
+            $("body").css("overflow","auto");
+	}else{
+		alert("当前订单状态不允许进行支付方式变更！");
+		return false;
+	}
+})
+    $(".moreSea").click(function () {
+        $(".seaBdy").css("display") == "block" ? $(".seaBdy").hide() : $(".seaBdy").show();
+    })
+    $(".item").mouseover(function () {
+        $(this).find("span").css("color", "#d01126");
+        $(this).css("cursor", "pointer");
+    }).mouseout(function () {
+        $(this).find("span").css("color", "#666666")
+    })
+
+    $(".queryFormBtn").click(function () {
+        $("#myOrderForm").attr("action","${S_URL}/soMain/queryOrderByCondition");
+        $("#myOrderForm")[0].submit();
+    })
+
+    $(".exportFormBtn").click(function () {
+        $("#myOrderForm").attr("action","${S_URL}/soMain/queExpOrdByCon");
+        $("#myOrderForm")[0].submit();
+    })
+
+    $("body").keydown(function () {
+        if (event.keyCode == "13") {//keyCode=13是回车键
+            $('.queryFormBtn').click();
+        }
+    });
+
+    var cdeStsPayDrop = initCombo($("#cdeStsPayInput").val(),
+            "${S_URL}/coding/read/code/parent_value/cdeStsPay",
+            "cdeStsPay",
+            182,
+            "cdeStsPay",
+            function (dropObj, selectedText, selectedValue) {
+                $("#cdeStsPay").val(selectedValue);
+                $("#cdeStsPayInput").val(selectedValue);
+            }
+    );
+    var ordStsDrop = initCombo($("#cdeStsOrdInput").val(),
+            "${S_URL}/coding/read/code/parent_value/ordSts",
+            "cdeStsOrd",
+            182,
+            "cdeStsOrd",
+            function (dropObj, selectedText, selectedValue) {
+                $("#cdeStsOrd").val(selectedValue);
+                $("#cdeStsOrdInput").val(selectedValue);
+            }
+    );
+    var cdeTypLgsDrop = initCombo($("#cdeTypLgsInput").val(),
+            "${S_URL}/coding/read/code/parent_value/cdeTypLgs",
+            "cdeTypLgs",
+            182,
+            "cdeTypLgs",
+            function (dropObj, selectedText, selectedValue) {
+                $("#cdeTypLgs").val(selectedValue);
+                $("#cdeTypLgsInput").val(selectedValue);
+            }
+    );
+    var cdeTypTrspDrop = initCombo($("#cdeTypTrspInput").val(),
+            "${S_URL}/coding/read/code/parent_value/cdeTypTerspOrd",
+            "cdeTypTrsp",
+            182,
+            "cdeTypTrsp",
+            function (dropObj, selectedText, selectedValue) {
+                $("#cdeTypTrsp").val(selectedValue);
+                $("#cdeTypTrspInput").val(selectedValue);
+            }
+    );
+    var myCalendar = new dhtmlXCalendarObject(["releaseDateF", "releaseDateL"]);
+    
+    myCalendar.loadUserLanguage("zh_CN");
+    
+    
+    
+    myCalendar.setDateFormat("%Y-%m-%d");
+    var dateTemp = DateFun.formatDate(new Date(),"yyyy-MM-dd");//获取系统当前时间
+    //$("#releaseDateF").val(dateTemp);
+    //$("#releaseDateL").val(dateTemp);
+
+    $(function () {
+    
+   	   $(".proName").each(function () {
+            var proNameVal=$(this).find("span").html();
+            $(this).attr("title", ""+proNameVal)
+        })
+           $(".nameStlgd").each(function () {
+            var nameStlgdVal=$(this).find("span").html();
+            $(this).attr("title", ""+nameStlgdVal)
+        })
+           $(".desDimOrd").each(function () {
+            var desDimOrdVal=$(this).find("span").html();
+            $(this).attr("title", ""+desDimOrdVal)
+        })
+           $(".perMoney").each(function () {
+            var perMoneyVal=$(this).find("span").html();
+            $(this).attr("title", ""+perMoneyVal)
+        })
+   	   $(".pieNumber").each(function () {
+            var pieNumberVal=$(this).find("span").html();
+            $(this).attr("title", ""+pieNumberVal)
+        })
+           $(".weight").each(function () {
+            var weightVal=$(this).find("span").html();
+            $(this).attr("title", ""+weightVal)
+        })
+           $(".numResoDiv").each(function () {
+            var numResoDivVal=$(this).find("span").html();
+            $(this).attr("title", ""+numResoDivVal)
+        })
+           $(".wtOrdTtlDiv").each(function () {
+            var wtOrdTtlDivVal=$(this).find("span").html();
+            $(this).attr("title", ""+wtOrdTtlDivVal)
+        })
+          $(".cOneRTwo").each(function () {
+            var stsTemp= $(this).attr("stsTemp");
+            var cOneRTwoVal=$(this).find("span").html();
+            var yun=Number($(this).parents(".cOne").find(".cOneROnePrceYun").html());
+            if(stsTemp=="待承运方报价" || stsTemp=="运费待客户确认"){
+               $(this).attr("title", "拟收货款：¥ " + numberFormart(cOneRTwoVal)+"    拟收运费：¥ "+yun);      
+            }else{
+               $(this).attr("title", "订单总金额：¥ " + numberFormart(cOneRTwoVal)+"    拟收运费：¥ "+yun); 
+            }
+        })
+        $(".monyTotlSpan").each(function () {
+            $(this).html("¥ " + numberFormart($(this).html()));
+        })
+        $(".cOneRTwoPrce").each(function () {
+            var stsTemp= $(this).attr("stsTemp");
+            if(stsTemp=="待承运方报价" || stsTemp=="运费待客户确认"){
+               var sumTemp= (Number($(this).parents(".cOne").find(".cOneROnePrceHuo").html())+ Number($(this).parents(".cOne").find(".cOneROnePrceYun").html())).toFixed(2);            
+            }else{
+               var sumTemp=Number($(this).parents(".cOne").find(".cOneROnePrceHuo").html());
+            }
+            
+            $(this).html("¥ " + numberFormart(sumTemp));
+        })
+        $(".cOneROnePrce").each(function () {
+            $(this).html("¥ " + numberFormart($(this).html()));
+        })
+        $(".cOneRTwoTempSpan").each(function () {
+             var tttTemp=Number($(this).html()).toFixed(2);
+            $(this).html(numberFormart(tttTemp));
+        })
+        
+    });
+</script>
+"
