@@ -11,7 +11,14 @@ from flask_bootstrap import Bootstrap
 # from flask.ext.cache import Cache
 from flask_caching import Cache
 
+import rediscluster
 from rediscluster import StrictRedisCluster
+from rediscluster.nodemanager import NodeManager
+from rediscluster.exceptions import (RedisClusterException, AskError, MovedError,
+                                     TryAgainError, ClusterDownError, ClusterCrossSlotError)
+
+import pytest
+
 
 # local imports
 from config import app_config
@@ -45,7 +52,7 @@ def create_app(config_name):
         # 'CACHE_REDIS_URL':'redis://localhost:6379'
     }
     # Check Configuring Flask-Cache section for more details
-    #app.cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+    # app.cache = Cache(app, config={'CACHE_TYPE': 'simple'})
     app.cache = Cache(config=cache_configuration)
 
     startup_nodes = [
@@ -53,13 +60,21 @@ def create_app(config_name):
         {'host': '127.0.0.1', 'port': 6380}
     ]
     try:
-        app.redisconn = StrictRedisCluster(startup_nodes=startup_nodes, decode_responses=True)
+        # n = NodeManager(startup_nodes=startup_nodes)
+        # with pytest.raises(RedisClusterException) as e:
+        #     n.initialize()
+
+        app.redisconn = StrictRedisCluster(startup_nodes=startup_nodes, decode_responses=False,
+                                           skip_full_coverage_check=True)
+        with pytest.raises(RedisClusterException) as e:
+            app.redisconn.initialize()
+        assert 'All slots are not covered' in unicode(e.value)
         app.redisconn.set('name', 'admin')
         app.redisconn.set('age', 18)
-    except Exception, e:
-        #app.logger.error('What the fuck is going on , the StrictRedisCluster Connect Error, app will exit')
-        print ''
-        #sys.exit(1)
+
+    except RedisClusterException, e:
+        app.logger.error(e.message)
+        # sys.exit(1)
 
     # initialize the flask objects
     Bootstrap(app)
